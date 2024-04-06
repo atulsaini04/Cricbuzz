@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MatchDetailsResponse {
-    private String matchId;
+    private Long matchId;
     private String team1;
     private String team2;
     private String date;
@@ -15,7 +15,7 @@ public class MatchDetailsResponse {
     private List<SquadResponse> squads;
 
     public MatchDetailsResponse(Match match) {
-        this.matchId = String.valueOf(match.getId());
+        this.matchId = (match.getMatchId());
         this.team1 = match.getTeam1();
         this.team2 = match.getTeam2();
         this.date = match.getDate();
@@ -24,11 +24,11 @@ public class MatchDetailsResponse {
         this.squads = match.getSquads().stream().map(SquadResponse::new).collect(Collectors.toList());
     }
 
-    public String getMatchId() {
+    public Long getMatchId() {
         return matchId;
     }
 
-    public void setMatchId(String matchId) {
+    public void setMatchId(Long matchId) {
         this.matchId = matchId;
     }
 

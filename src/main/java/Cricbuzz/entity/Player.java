@@ -11,6 +11,8 @@ public class Player {
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
+    @ManyToOne // Many players belong to one squad
+    private Squad squad;
     private String role;
     public Player(Long id, String name) {
         this.id = id;
@@ -18,6 +20,14 @@ public class Player {
     }
 
     public Player() {
+    }
+
+    public Squad getSquad() {
+        return squad;
+    }
+
+    public void setSquad(Squad squad) {
+        this.squad = squad;
     }
 
     public String getRole() {

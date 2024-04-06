@@ -7,7 +7,8 @@ import java.util.List;
 public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @Column(name = "match_id")
+    private Long matchId;
     private String team1;
     private String team2;
     private String date;
@@ -20,28 +21,21 @@ public class Match {
     public Match() {
     }
 
-    public Match(String id, String team1, String team2, String date, String venue) {
-        this.id = id;
+    public Match(Long matchId, String team1, String team2, String date, String venue, List<Squad> squads) {
+        this.matchId = matchId;
         this.team1 = team1;
         this.team2 = team2;
         this.date = date;
         this.venue = venue;
-    }
-
-    public List<Squad> getSquads() {
-        return squads;
-    }
-
-    public void setSquads(List<Squad> squads) {
         this.squads = squads;
     }
 
-    public String getId() {
-        return id;
+    public Long getMatchId() {
+        return matchId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setMatchId(Long matchId) {
+        this.matchId = matchId;
     }
 
     public String getTeam1() {
@@ -50,6 +44,14 @@ public class Match {
 
     public void setTeam1(String team1) {
         this.team1 = team1;
+    }
+
+    public List<Squad> getSquads() {
+        return squads;
+    }
+
+    public void setSquads(List<Squad> squads) {
+        this.squads = squads;
     }
 
     public String getTeam2() {

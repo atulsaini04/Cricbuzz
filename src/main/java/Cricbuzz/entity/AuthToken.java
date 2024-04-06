@@ -8,14 +8,13 @@ public class AuthToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "username")
+    private String username;
     @Column(name = "token")
     private String token;
     @ManyToOne
-    @JoinColumn(name = "emp_code", referencedColumnName = "emp_code", insertable = false, updatable = false)
+    @JoinColumn(name = "username", referencedColumnName = "username", insertable = false, updatable = false)
     private Admin login;
-    @Column(name = "user_name")
-    private String username;
     @Column(name = "expiration_time")
     private LocalDateTime expirationTime;
 

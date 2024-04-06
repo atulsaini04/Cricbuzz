@@ -5,12 +5,12 @@ import Cricbuzz.entity.Match;
 
 public class MatchResponse {
     private String message;
-    private String matchId;
+    private Long matchId;
 
     public MatchResponse() {
     }
 
-    public MatchResponse(String message, String matchId) {
+    public MatchResponse(String message, Long matchId) {
         this.message = message;
         this.matchId = matchId;
     }
@@ -26,11 +26,11 @@ public class MatchResponse {
         this.message = message;
     }
 
-    public String getMatchId() {
+    public Long getMatchId() {
         return matchId;
     }
 
-    public void setMatchId(String matchId) {
+    public void setMatchId(Long matchId) {
         this.matchId = matchId;
     }
 }

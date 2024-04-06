@@ -37,7 +37,7 @@ public class MatchController {
         Match createdMatch = matchService.createMatch(matchRequest);
 
         // Prepare response
-        MatchResponse response = new MatchResponse("Match created successfully", createdMatch.getId());
+        MatchResponse response = new MatchResponse("Match created successfully", createdMatch.getMatchId());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     @GetMapping("/matches")

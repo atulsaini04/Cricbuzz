@@ -22,8 +22,8 @@ public class AdminServiceImpl implements AdminService {
         authTokenRepository.save(authToken);
     }
 
-    public boolean login(String empCode, String password) {
-        Admin login = adminRepository.findByEmpCodeAndOrgId(empCode);
+    public boolean login(String username, String password) {
+        Admin login = adminRepository.findByusername(username);
         // System.out.println("zuffg");
         return login != null && login.getPassword().equals(password);
     }

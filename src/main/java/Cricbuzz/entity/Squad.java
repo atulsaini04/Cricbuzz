@@ -14,7 +14,7 @@ public class Squad {
     private Team team;
 
     @ManyToOne
-    @JoinColumn(name = "match_id")
+    @JoinColumn(name = "squad_match_id") // Rename the join column to avoid conflict
     private Match match;
 
     @OneToMany(mappedBy = "squad")
