@@ -1,4 +1,4 @@
-package com.example.myfirstproject.firstproject.entity;
+package Cricbuzz.entity;
 import javax.persistence.*;
 import java.util.List;
 

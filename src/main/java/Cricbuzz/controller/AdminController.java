@@ -1,16 +1,18 @@
-package com.example.myfirstproject.firstproject.controller;
-import com.example.myfirstproject.firstproject.TOs.AdminResponseTO;
-import com.example.myfirstproject.firstproject.TOs.ErrorResponse;
-import com.example.myfirstproject.firstproject.TOs.LoginRequest;
-import com.example.myfirstproject.firstproject.TOs.LoginResponse;
-import com.example.myfirstproject.firstproject.entity.Admin;
-import com.example.myfirstproject.firstproject.entity.AuthToken2;
-import com.example.myfirstproject.firstproject.service.AdminService;
+package Cricbuzz.controller;
+
+import Cricbuzz.TOs.AdminResponseTO;
+import Cricbuzz.TOs.ErrorResponse;
+import Cricbuzz.TOs.LoginRequest;
+import Cricbuzz.TOs.LoginResponse;
+import Cricbuzz.entity.Admin;
+import Cricbuzz.entity.AuthToken;
+import Cricbuzz.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.MessageDigest;
@@ -20,6 +22,7 @@ import java.util.Base64;
 import java.util.UUID;
 
 @RestController
+@RequestMapping("/api/admin")
 public class AdminController {
 
     @Autowired
@@ -28,14 +31,14 @@ public class AdminController {
     private static final String secretKey = "my-key"; // Replace with your actual secret key
 
 
-    @PostMapping("/admin/register")
+    @PostMapping("/register")
     public ResponseEntity<?> registerAdmin(@RequestBody Admin admin) {
         Admin registeredAdmin = adminService.registerAdmin(admin);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new AdminResponseTO("Admin Account successfully created", HttpStatus.OK.value(), registeredAdmin.getId()));
     }
 
-    @PostMapping("/admin/login")
+    @PostMapping("/login")
     public ResponseEntity<?> loginAdmin(@RequestBody LoginRequest loginRequest) {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
@@ -52,8 +55,7 @@ public class AdminController {
             if (isValidLogin) {
                 String emppassword = username + ":" + password;
                 String authToken = generateAuthToken(emppassword, secretKey);
-
-                AuthToken2 auth = new AuthToken2();
+                AuthToken auth = new AuthToken();
                 auth.setToken(authToken);
                 auth.setUsername(username);
                 auth.setExpirationTime(LocalDateTime.now().plusMinutes(2));

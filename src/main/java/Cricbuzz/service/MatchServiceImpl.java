@@ -1,7 +1,8 @@
-package com.example.myfirstproject.firstproject.service;
-import com.example.myfirstproject.firstproject.TOs.MatchRequest;
-import com.example.myfirstproject.firstproject.entity.Match;
-import com.example.myfirstproject.firstproject.repository.MatchRepo;
+package Cricbuzz.service;
+
+import Cricbuzz.TOs.MatchRequest;
+import Cricbuzz.entity.Match;
+import Cricbuzz.repository.MatchRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

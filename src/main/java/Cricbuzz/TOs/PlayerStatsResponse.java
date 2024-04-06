@@ -1,4 +1,4 @@
-package com.example.myfirstproject.firstproject.TOs;
+package Cricbuzz.TOs;
 public class PlayerStatsResponse {
     private String playerId;
     private String name;

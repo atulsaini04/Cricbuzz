@@ -1,8 +1,7 @@
-package com.example.myfirstproject.firstproject.service;
+package Cricbuzz.service;
 
-import com.example.myfirstproject.firstproject.TOs.PlayerRequest;
-import com.example.myfirstproject.firstproject.entity.Player;
-
+import Cricbuzz.TOs.PlayerRequest;
+import Cricbuzz.entity.Player;
 public interface SquadService {
     Player addPlayerToSquad(Long teamId, PlayerRequest playerRequest);
 }

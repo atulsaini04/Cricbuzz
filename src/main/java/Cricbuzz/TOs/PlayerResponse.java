@@ -1,6 +1,7 @@
-package com.example.myfirstproject.firstproject.TOs;
+package Cricbuzz.TOs;
 
-import com.example.myfirstproject.firstproject.entity.Player;
+
+import Cricbuzz.entity.Player;
 
 public class PlayerResponse {
     private String playerId;

@@ -1,9 +1,10 @@
-package com.example.myfirstproject.firstproject.controller;
-import com.example.myfirstproject.firstproject.TOs.AddPlayerResponse;
-import com.example.myfirstproject.firstproject.TOs.ErrorResponse;
-import com.example.myfirstproject.firstproject.TOs.PlayerRequest;
-import com.example.myfirstproject.firstproject.entity.Player;
-import com.example.myfirstproject.firstproject.service.SquadService;
+package Cricbuzz.controller;
+
+import Cricbuzz.TOs.AddPlayerResponse;
+import Cricbuzz.TOs.ErrorResponse;
+import Cricbuzz.TOs.PlayerRequest;
+import Cricbuzz.entity.Player;
+import Cricbuzz.service.SquadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

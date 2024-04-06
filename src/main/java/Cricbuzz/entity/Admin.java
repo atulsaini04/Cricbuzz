@@ -1,14 +1,13 @@
-package com.example.myfirstproject.firstproject.entity;
- import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+package Cricbuzz.entity;
+ import javax.persistence.*;
 
-    @Entity
+@Entity
     public class Admin {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+
+        @Column(name = "username")
         private String username;
         private String password;
         private String email;

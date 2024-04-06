@@ -1,9 +1,10 @@
-package com.example.myfirstproject.firstproject.controller;
-import com.example.myfirstproject.firstproject.TOs.*;
-import com.example.myfirstproject.firstproject.entity.AuthToken2;
-import com.example.myfirstproject.firstproject.entity.Match;
-import com.example.myfirstproject.firstproject.repository.AuthTokenRepository2;
-import com.example.myfirstproject.firstproject.service.MatchService;
+package Cricbuzz.controller;
+
+import Cricbuzz.TOs.*;
+import Cricbuzz.entity.AuthToken;
+import Cricbuzz.entity.Match;
+import Cricbuzz.repository.AuthTokenRepository;
+import Cricbuzz.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +20,9 @@ public class MatchController {
     @Autowired
     private MatchService matchService;
     @Autowired
-    private final AuthTokenRepository2 authTokenRepository;
+    private final AuthTokenRepository authTokenRepository;
 
-    public MatchController(AuthTokenRepository2 authTokenRepository) {
+    public MatchController(AuthTokenRepository authTokenRepository) {
         this.authTokenRepository = authTokenRepository;
     }
 
@@ -53,7 +54,7 @@ public class MatchController {
         return ResponseEntity.status(HttpStatus.OK).body(new MatchDetailsResponse(match));
     }
     public boolean isLoggedIn(String authToken) {
-        AuthToken2 token = authTokenRepository.findByToken(authToken);
+        AuthToken token = authTokenRepository.findByToken(authToken);
         if (token != null && token.getExpirationTime().isAfter(LocalDateTime.now())) {
             // Token is valid and not expired
             return true;

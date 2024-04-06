@@ -1,5 +1,4 @@
-package com.example.myfirstproject.firstproject.TOs;
-
+package Cricbuzz.TOs;
 
 public class MatchRequest {
     private String team1;

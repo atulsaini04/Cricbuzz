@@ -1,8 +1,9 @@
-package com.example.myfirstproject.firstproject.service;
-import com.example.myfirstproject.firstproject.entity.Admin;
-import com.example.myfirstproject.firstproject.entity.AuthToken2;
-import com.example.myfirstproject.firstproject.repository.AdminRepo;
-import com.example.myfirstproject.firstproject.repository.AuthTokenRepository2;
+package Cricbuzz.service;
+
+import Cricbuzz.entity.Admin;
+import Cricbuzz.entity.AuthToken;
+import Cricbuzz.repository.AdminRepo;
+import Cricbuzz.repository.AuthTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,11 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminRepo adminRepository;
     @Autowired
-    private AuthTokenRepository2 authTokenRepository2;
+    private AuthTokenRepository authTokenRepository;
     @Override
-    public void saveAuthToken(AuthToken2 authToken) {
+    public void saveAuthToken(AuthToken authToken) {
         // Save the AuthToken entity in the database
-        authTokenRepository2.save(authToken);
+        authTokenRepository.save(authToken);
     }
 
     public boolean login(String empCode, String password) {
@@ -38,9 +39,9 @@ public class AdminServiceImpl implements AdminService {
     }
     @Override
     public boolean isAlreadyLoggedIn(String username) {
-        List<AuthToken2> activeTokens = authTokenRepository2.findAll();
+        List<AuthToken> activeTokens = authTokenRepository.findAll();
 
-        for (AuthToken2 token : activeTokens) {
+        for (AuthToken token : activeTokens) {
             Admin login = token.getLogin();
             if (login != null && login.getUsername().equals(username)) {
                 // User is already logged in

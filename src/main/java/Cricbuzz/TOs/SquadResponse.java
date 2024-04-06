@@ -1,9 +1,6 @@
-package com.example.myfirstproject.firstproject.TOs;
-
-    import com.example.myfirstproject.firstproject.entity.Player;
-    import com.example.myfirstproject.firstproject.entity.Squad;
-
-    import java.util.List;
+package Cricbuzz.TOs;
+ import Cricbuzz.entity.Squad;
+ import java.util.List;
     import java.util.stream.Collectors;
 
 public class SquadResponse {
@@ -13,11 +10,12 @@ public class SquadResponse {
             this.players = players.stream().map(PlayerResponse::new).collect(Collectors.toList());
         }
 
-
-
+    public SquadResponse() {
+    }
 
     public SquadResponse(Squad squad) {
     }
+
 
 
     public List<PlayerResponse> getPlayers() {

@@ -1,6 +1,6 @@
-package com.example.myfirstproject.firstproject.service;
+package Cricbuzz.service;
 
-import com.example.myfirstproject.firstproject.TOs.PlayerStatsResponse;
+import Cricbuzz.TOs.PlayerStatsResponse;
 
 public interface PlayerService {
     PlayerStatsResponse getPlayerStats(Long playerId);

@@ -1,7 +1,7 @@
-package com.example.myfirstproject.firstproject.service;
+package Cricbuzz.service;
 
-import com.example.myfirstproject.firstproject.TOs.MatchRequest;
-import com.example.myfirstproject.firstproject.entity.Match;
+import Cricbuzz.TOs.MatchRequest;
+import Cricbuzz.entity.Match;
 
 import java.util.List;
 

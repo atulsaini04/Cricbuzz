@@ -1,6 +1,6 @@
-package com.example.myfirstproject.firstproject.repository;
+package Cricbuzz.repository;
 
-import com.example.myfirstproject.firstproject.entity.Player;
+import Cricbuzz.entity.Player;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;

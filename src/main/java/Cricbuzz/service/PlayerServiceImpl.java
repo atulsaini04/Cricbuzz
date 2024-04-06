@@ -1,7 +1,7 @@
-package com.example.myfirstproject.firstproject.service;
-import com.example.myfirstproject.firstproject.TOs.PlayerStatsResponse;
-import com.example.myfirstproject.firstproject.entity.Player;
-import com.example.myfirstproject.firstproject.repository.PlayerRepo;
+package Cricbuzz.service;
+import Cricbuzz.TOs.PlayerStatsResponse;
+import Cricbuzz.entity.Player;
+import Cricbuzz.repository.PlayerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

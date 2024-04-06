@@ -1,6 +1,7 @@
-package com.example.myfirstproject.firstproject.TOs;
+package Cricbuzz.TOs;
 
-import com.example.myfirstproject.firstproject.entity.Match;
+
+import Cricbuzz.entity.Match;
 
 public class MatchResponse {
     private String message;

@@ -1,4 +1,4 @@
-package com.example.myfirstproject.firstproject.TOs;
+package Cricbuzz.TOs;
 
 import com.example.myfirstproject.firstproject.entity.Match;
 

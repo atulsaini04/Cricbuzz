@@ -1,4 +1,4 @@
-package com.example.myfirstproject.firstproject;
+package Cricbuzz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

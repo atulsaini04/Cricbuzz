@@ -1,4 +1,4 @@
-package com.example.myfirstproject.firstproject.TOs;
+package Cricbuzz.TOs;
 public class PlayerRequest {
     private String name;
     private String role;
@@ -18,6 +18,5 @@ public class PlayerRequest {
     public void setRole(String role) {
         this.role = role;
     }
-// Constructors, getters, and setters
 }
 

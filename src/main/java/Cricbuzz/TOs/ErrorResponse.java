@@ -1,4 +1,4 @@
-package com.example.myfirstproject.firstproject.TOs;
+package Cricbuzz.TOs;
 public class ErrorResponse {
     private String status;
     private int statusCode;

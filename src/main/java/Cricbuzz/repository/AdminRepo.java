@@ -1,5 +1,6 @@
-package com.example.myfirstproject.firstproject.repository;
-import com.example.myfirstproject.firstproject.entity.Admin;
+package Cricbuzz.repository;
+
+import Cricbuzz.entity.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
